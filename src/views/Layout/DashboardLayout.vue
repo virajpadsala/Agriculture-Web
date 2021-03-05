@@ -3,16 +3,17 @@
     <notifications></notifications>
     <side-bar>
       <template slot="links">
-        <sidebar-item
+        <sidebar-item v-for="(menu, index) in menuItems"
+          :key= index
           :link="{
-            name: 'Dashboard',
-            path: '/dashboard',
-            icon: 'ni ni-tv-2 text-primary',
+            name: menu.name,
+            path: menu.path,
+            icon: menu.icon,
           }"
         >
         </sidebar-item>
 
-        <sidebar-item
+        <!-- <sidebar-item
             :link="{
               name: 'Icons',
               path: '/icons',
@@ -23,42 +24,12 @@
 
         <sidebar-item
               :link="{
-                name: 'Maps',
-                path: '/maps',
-                icon: 'ni ni-pin-3 text-orange'
-              }">
-        </sidebar-item>
-
-        <sidebar-item
-              :link="{
                 name: 'User Profile',
                 path: '/profile',
                 icon: 'ni ni-single-02 text-yellow'
                 }">
-        </sidebar-item>
+        </sidebar-item> -->
 
-        <sidebar-item
-                :link="{
-                  name: 'Tables',
-                  path: '/tables',
-                  icon: 'ni ni-bullet-list-67 text-red'
-                }">
-        </sidebar-item>
-
-        <sidebar-item
-                  :link="{
-                    name: 'Login',
-                    path: '/login',
-                    icon: 'ni ni-key-25 text-info'
-                  }">
-        </sidebar-item>
-        <sidebar-item
-                  :link="{
-                    name: 'Register',
-                    path: '/register',
-                    icon: 'ni ni-circle-08 text-pink'
-                  }">
-        </sidebar-item>
       </template>
 
     </side-bar>
@@ -107,6 +78,13 @@
       DashboardContent,
       FadeTransition
     },
+    data: {
+      userType: localStorage.getItem('userType'),
+      farmerMenu: [{icon: 'ni ni-tv-2 text-primary', name:"Soil Testing", path: '/dashboard'}, {icon: 'ni ni-planet text-blue', name:"My Farms", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name:"Add Farm", path: '/dashboard'}],
+      adminMenu: [{icon: 'ni ni-bullet-list-67 text-red', name: "Farmers", path: '/dashboard'},{icon: 'ni ni-tv-2 text-primary', name: "Soil Test", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name: "Corp", path: '/dashboard'}],
+      buyerMenu: [{icon: 'ni ni-bullet-list-67 text-red', name:"Search corp type", path: '/dashboard'}, {icon: 'ni ni-tv-2 text-primary', name:"Search Farm",path: '/dashboard'}],
+      menuItems: []
+    },
     methods: {
       initScrollbar() {
         let isWindows = navigator.platform.startsWith('Win');
@@ -116,7 +94,15 @@
       }
     },
     mounted() {
-      this.initScrollbar()
+      this.initScrollbar();
+       if(this.userType === 'ADMIN'){
+          this.menuItems = this.adminMenu;
+      }
+      else if(this.userType === 'BUYER'){
+          this.menuItems = this.buyerMenu;
+      } else {
+           this.menuItems = this.farmerMenu;
+      }
     }
   };
 </script>

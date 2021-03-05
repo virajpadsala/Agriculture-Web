@@ -66,9 +66,11 @@
             <span>Support</span>
           </b-dropdown-item>
           <div class="dropdown-divider"></div>
-          <b-dropdown-item href="#!">
-            <i class="ni ni-user-run"></i>
-            <span>Logout</span>
+          <b-dropdown-item>
+            <router-link to="/login" class="dropdown-item">
+                <i class="ni ni-user-run"></i>
+                <span>Logout</span>
+            </router-link>
           </b-dropdown-item>
 
         </template>

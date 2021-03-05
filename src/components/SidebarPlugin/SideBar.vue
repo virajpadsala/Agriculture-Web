@@ -52,10 +52,11 @@
                             <span>Support</span>
                         </router-link>
                         <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
+                        <router-link to="/login" class="dropdown-item">
+                           <i class="ni ni-user-run"></i>
                             <span>Logout</span>
-                        </a>
+                        </router-link>
+                      
                     </base-dropdown>
                 </ul>
             </slot>
