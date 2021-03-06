@@ -2,7 +2,7 @@
   <div class="wrapper">
     <notifications></notifications>
     <side-bar>
-      <template slot="links">
+      <template slot="links" v-if="menuItems">
         <sidebar-item v-for="(menu, index) in menuItems"
           :key= index
           :link="{
@@ -78,12 +78,14 @@
       DashboardContent,
       FadeTransition
     },
-    data: {
-      userType: localStorage.getItem('userType'),
-      farmerMenu: [{icon: 'ni ni-tv-2 text-primary', name:"Soil Testing", path: '/dashboard'}, {icon: 'ni ni-planet text-blue', name:"My Farms", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name:"Add Farm", path: '/dashboard'}],
-      adminMenu: [{icon: 'ni ni-bullet-list-67 text-red', name: "Farmers", path: '/dashboard'},{icon: 'ni ni-tv-2 text-primary', name: "Soil Test", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name: "Corp", path: '/dashboard'}],
-      buyerMenu: [{icon: 'ni ni-bullet-list-67 text-red', name:"Search corp type", path: '/dashboard'}, {icon: 'ni ni-tv-2 text-primary', name:"Search Farm",path: '/dashboard'}],
-      menuItems: []
+    data() {
+       return {
+        userType: localStorage.getItem('userType'),
+        farmerMenu: [{icon: 'ni ni-tv-2 text-primary', name:"Soil Testing", path: '/dashboard'}, {icon: 'ni ni-planet text-blue', name:"My Farms", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name:"Add Farm", path: '/dashboard'}],
+        adminMenu: [{icon: 'ni ni-bullet-list-67 text-red', name: "Farmers", path: '/dashboard'},{icon: 'ni ni-tv-2 text-primary', name: "Soil Test", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name: "Corp", path: '/dashboard'}],
+        buyerMenu: [{icon: 'ni ni-bullet-list-67 text-red', name:"Search corp type", path: '/dashboard'}, {icon: 'ni ni-tv-2 text-primary', name:"Search Farm",path: '/dashboard'}],
+        menuItems: []
+       }
     },
     methods: {
       initScrollbar() {

@@ -7,7 +7,7 @@
           <b-row class="justify-content-center">
             <b-col xl="5" lg="6" md="8" class="px-5">
               <h1 class="text-white">Create an account</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
+              <p class="text-lead text-white">create new account in your project for
                 free.</p>
             </b-col>
           </b-row>
@@ -35,10 +35,19 @@
                   <base-input alternative
                               class="mb-3"
                               prepend-icon="ni ni-hat-3"
-                              placeholder="Name"
-                              name="Name"
+                              placeholder="Fist Name"
+                              name="First Name"
                               :rules="{required: true}"
-                              v-model="model.name">
+                              v-model="model.firstName">
+                  </base-input>
+                 
+                  <base-input alternative
+                              class="mb-3"
+                              prepend-icon="ni ni-hat-3"
+                              placeholder="Last Name"
+                              name="Last Name"
+                              :rules="{required: true}"
+                              v-model="model.lastName">
                   </base-input>
 
                   <base-input alternative
@@ -48,6 +57,16 @@
                               name="Email"
                               :rules="{required: true, email: true}"
                               v-model="model.email">
+                  </base-input>
+                  
+                  <base-input alternative
+                              class="mb-3"
+                              prepend-icon="ni ni-circle-08"
+                              placeholder="Contact Number"
+                              name="Contact Number"
+                              type="number"
+                              :rules="{required: true, min: 10}"
+                              v-model="model.contactNo">
                   </base-input>
 
                   <base-input alternative
@@ -59,6 +78,25 @@
                               :rules="{required: true, min: 6}"
                               v-model="model.password">
                   </base-input>
+                  
+                  <base-input alternative
+                              class="mb-3"
+                              prepend-icon="ni ni-lock-circle-open"
+                              placeholder="Confirm Password"
+                              type="password"
+                              name="Confirm Password"
+                              :rules="{required: true, min: 6}"
+                              v-model="model.cpassword">
+                  </base-input>
+                  <div>
+                    <base-radio value="FARMER" name="FARMER" class="mb-3" v-model="model.userType">
+                        Farmer
+                    </base-radio>
+
+                    <base-radio value="BUYER" name="BUYER" class="mb-3" v-model="model.userType">
+                        Buyer
+                    </base-radio>
+                  </div>
                   <div class="text-muted font-italic"><small>password strength: <span
                     class="text-success font-weight-700">strong</span></small></div>
                   <b-row class=" my-4">
@@ -89,15 +127,21 @@
     data() {
       return {
         model: {
-          name: '',
+          firstName: '',
+          lastName: '',
           email: '',
+          contactNo: '',
           password: '',
+          cpassword: '',
+          userType: 'FARMER',
           agree: false
         }
       }
     },
     methods: {
       onSubmit() {
+          this.$router.push({ path: 'dashboard' });
+          localStorage.setItem('userType', this.userType)
         // this will be called only after form is valid. You can do an api call here to register users
       }
     }

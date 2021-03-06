@@ -7,7 +7,7 @@
           <b-row class="justify-content-center">
             <b-col xl="5" lg="6" md="8" class="px-5">
               <h1 class="text-white">Welcome!</h1>
-              <p class="text-lead text-white">Use these awesome forms to login or create new account in your project for
+              <p class="text-lead text-white">create new account in your project for
                 free.</p>
             </b-col>
           </b-row>
@@ -33,9 +33,9 @@
                 <b-form role="form" @submit.prevent="handleSubmit(onSubmit)">
                   <base-input alternative
                               class="mb-3"
-                              name="Email"
-                              :rules="{required: true, email: true}"
-                              prepend-icon="ni ni-email-83"
+                              name="Username"
+                              :rules="{required: true}"
+                              prepend-icon="ni ni-hat-3"
                               placeholder="Email"
                               v-model="model.email">
                   </base-input>
@@ -50,7 +50,7 @@
                               v-model="model.password">
                   </base-input>
 
-                  <b-form-checkbox v-model="model.rememberMe">Remember me</b-form-checkbox>
+                  <!-- <b-form-checkbox v-model="model.rememberMe">Remember me</b-form-checkbox> -->
                   <div class="text-center">
                     <base-button type="primary" native-type="submit" class="my-4">Sign in</base-button>
                   </div>
@@ -60,7 +60,7 @@
           </b-card>
           <b-row class="mt-3">
             <b-col cols="6">
-              <router-link to="/dashboard" class="text-light"><small>Forgot password?</small></router-link>
+              
             </b-col>
             <b-col cols="6" class="text-right">
               <router-link to="/register" class="text-light"><small>Create new account</small></router-link>
