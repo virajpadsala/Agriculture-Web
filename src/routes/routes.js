@@ -21,6 +21,21 @@ const routes = [
         path: '/farmers',
         name: 'farmers',
         component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/Farmers.vue')
+      },
+      {
+        path: '/add-farmer',
+        name: 'Add Farmer',
+        component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/FarmerForm.vue')
+      },
+      {
+        path: '/add-farm',
+        name: 'Add Farm',
+        component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/FarmForm.vue')
+      },
+      {
+        path: '/farmers/:id',
+        name: 'Farmer Detail',
+        component: () => import(/* webpackChunkName: "demo" */ '../views/Pages/FarmerDetail.vue')
       }
     ]
   },

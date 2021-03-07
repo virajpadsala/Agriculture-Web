@@ -12,17 +12,17 @@
           }"
         >
         </sidebar-item>
-
-        <!-- <sidebar-item
+       
+        <sidebar-item
             :link="{
-              name: 'Icons',
-              path: '/icons',
+              name: 'Login',
+              path: '/login',
               icon: 'ni ni-planet text-blue'
               }"
             >
         </sidebar-item>
 
-        <sidebar-item
+        <!-- <sidebar-item
               :link="{
                 name: 'User Profile',
                 path: '/profile',

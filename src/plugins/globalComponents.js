@@ -6,6 +6,7 @@ import BaseButton from '@/components/BaseButton.vue';
 
 import BaseCheckbox from '@/components/Inputs/BaseCheckbox.vue';
 import BaseRadio from "@/components/Inputs/BaseRadio";
+import BaseSelect from "@/components/Inputs/BaseSelect";
 
 import BaseNav from "@/components/Navbar/BaseNav";
 import BaseHeader from '@/components/BaseHeader';
@@ -24,6 +25,7 @@ const GlobalComponents = {
     Vue.component(BaseDropdown.name, BaseDropdown);
     Vue.component(BaseNav.name, BaseNav);
     Vue.component(BaseRadio.name, BaseRadio);
+    Vue.component(BaseSelect.name, BaseSelect);
     Vue.component(Card.name, Card);
     Vue.component(StatsCard.name, StatsCard);
     Vue.component(Input.name, Input);

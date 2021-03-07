@@ -1,5 +1,6 @@
 import BaseCheckbox from './Inputs/BaseCheckbox.vue';
 import BaseRadio from './Inputs/BaseRadio.vue';
+import BaseSelect from './Inputs/BaseSelect.vue';
 import BaseInput from './Inputs/BaseInput.vue';
 import BaseProgress from './BaseProgress.vue';
 import BaseButton from './BaseButton.vue';
@@ -18,6 +19,7 @@ export {
   BaseProgress,
   BaseRadio,
   BaseInput,
+  BaseSelect,
   StatsCard,
   BaseDropdown,
   BaseNav,
