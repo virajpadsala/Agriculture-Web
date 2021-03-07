@@ -1,6 +1,11 @@
 .main-content {
     position: relative;
 
+    .main-content-div{
+        min-height: calc(100vh - 101px);
+        overflow: auto;
+    }
+
     // Navbar
     .navbar-top {
         position: absolute;

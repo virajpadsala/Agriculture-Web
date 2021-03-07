@@ -65,7 +65,7 @@
       <!--Tables-->
       <b-row class="mt-5">
         <b-col xl="12" class="mb-5 mb-xl-0">
-          <page-visits-table></page-visits-table>
+          
         </b-col>
         
       </b-row>
@@ -79,21 +79,16 @@
   import BaseProgress from '@/components/BaseProgress';
   import StatsCard from '@/components/Cards/StatsCard';
 
-  // Tables
-  import SocialTrafficTable from './Dashboard/SocialTrafficTable';
-  import PageVisitsTable from './Dashboard/PageVisitsTable';
-
   export default {
     components: {
       BaseProgress,
       StatsCard,
-      PageVisitsTable,
-      SocialTrafficTable
     },
     data() {
       return {
   
       };
+      
     },
     methods: {
 

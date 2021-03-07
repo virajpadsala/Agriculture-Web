@@ -88,8 +88,8 @@
                               :rules="{required: true, min: 6}"
                               v-model="model.cpassword">
                   </base-input>
-                  <div>
-                    <base-radio value="FARMER" name="FARMER" class="mb-3" v-model="model.userType">
+                  <div class="d-flex">
+                    <base-radio value="FARMER" name="FARMER" class="mb-3 mr-4" v-model="model.userType">
                         Farmer
                     </base-radio>
 
@@ -115,6 +115,11 @@
               </validation-observer>
             </b-card-body>
           </b-card>
+          <b-row class="mt-3">
+            <b-col cols="12" class="text-center">
+              <router-link to="/login" class="text-light"><small>Already have an account? Sign In</small></router-link>
+            </b-col>
+          </b-row>
         </b-col>
       </b-row>
     </b-container>

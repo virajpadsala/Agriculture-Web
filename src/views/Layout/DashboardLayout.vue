@@ -36,7 +36,7 @@
     <div class="main-content">
       <dashboard-navbar :type="$route.meta.navbarType"></dashboard-navbar>
 
-      <div @click="$sidebar.displaySidebar(false)">
+      <div @click="$sidebar.displaySidebar(false)" class="main-content-div">
         <fade-transition :duration="200" origin="center top" mode="out-in">
           <!-- your content here -->
           <router-view></router-view>
@@ -82,7 +82,7 @@
        return {
         userType: localStorage.getItem('userType'),
         farmerMenu: [{icon: 'ni ni-tv-2 text-primary', name:"Soil Testing", path: '/dashboard'}, {icon: 'ni ni-planet text-blue', name:"My Farms", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name:"Add Farm", path: '/dashboard'}],
-        adminMenu: [{icon: 'ni ni-bullet-list-67 text-red', name: "Farmers", path: '/dashboard'},{icon: 'ni ni-tv-2 text-primary', name: "Soil Test", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name: "Corp", path: '/dashboard'}],
+        adminMenu: [{icon: 'ni ni-bullet-list-67 text-red', name: "Farmers", path: '/farmers'},{icon: 'ni ni-tv-2 text-primary', name: "Soil Test", path: '/dashboard'}, {icon: 'ni ni-single-02 text-yellow', name: "Corp", path: '/dashboard'}],
         buyerMenu: [{icon: 'ni ni-bullet-list-67 text-red', name:"Search corp type", path: '/dashboard'}, {icon: 'ni ni-tv-2 text-primary', name:"Search Farm",path: '/dashboard'}],
         menuItems: []
        }
