@@ -15,7 +15,7 @@
        
         <sidebar-item
             :link="{
-              name: 'Login',
+              name: 'Logout',
               path: '/login',
               icon: 'ni ni-planet text-blue'
               }"
